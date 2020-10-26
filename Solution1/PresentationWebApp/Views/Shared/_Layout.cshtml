@@ -33,9 +33,27 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            @RenderBody() 
+
+            @if (ViewData["warning"] != null)
+            {
+                <div class="alert alert-warning" role="alert" mt-2>
+                    @ViewData["warning"]
+                </div>
+
+            }
+            @if (ViewData["feedback"] != null)
+            {
+                <div class="alert alert-primary" role="alert" mt-2>
+                    @ViewData["feedback"]
+                </div>
+
+            }
+
+
         </main>
     </div>
 
