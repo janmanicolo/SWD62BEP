@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\ShoppincCart.data\ShoppincCart.data.csproj" />
   </ItemGroup>
 
 </Project>

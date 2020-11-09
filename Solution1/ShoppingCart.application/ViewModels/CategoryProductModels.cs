@@ -4,7 +4,9 @@ using System.Text;
 
 namespace ShoppingCart.application.ViewModels
 {
-    class CategoryProductModels
+    public class CategoryProductModels
     {
+        public int id { get; set; }
+        public string Name { get; set; }
     }
 }

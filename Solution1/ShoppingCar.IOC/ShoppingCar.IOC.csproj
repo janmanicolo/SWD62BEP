@@ -9,4 +9,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppincCart.data\ShoppincCart.data.csproj" />
+    <ProjectReference Include="..\ShoppingCart.application\ShoppingCart.application.csproj" />
+    <ProjectReference Include="..\Shoppingcart.domain\Shoppingcart.domain.csproj" />
+  </ItemGroup>
+
 </Project>
