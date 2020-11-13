@@ -26,7 +26,8 @@ namespace ShoppingCart.application.Services
                            Desc = p.Desc,
                            Name = p.Name,
                            Price = p.Price,
-                           category = new CategoryProductModels() { id = p.category.id, Name = p.category.Name }
+                           category = new CategoryProductModels() { id = p.category.id, Name = p.category.Name },
+                           ImageUrl = p.ImageUrl
                        };
             return list;
         }
@@ -35,13 +36,14 @@ namespace ShoppingCart.application.Services
         {
 
             var list = from p in _productsRep.GetProducts().Where(x => x.category.id == category)
-            select new ProductViewModels()
+                       select new ProductViewModels()
                        {
                            id = p.id,
                            Desc = p.Desc,
                            Name = p.Name,
                            Price = p.Price,
-                           category = new CategoryProductModels() { id = p.category.id, Name = p.category.Name }
+                           category = new CategoryProductModels() { id = p.category.id, Name = p.category.Name },
+                           ImageUrl = p.ImageUrl
                        };
             return list;
         }

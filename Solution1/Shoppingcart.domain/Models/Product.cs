@@ -21,5 +21,7 @@ namespace Shoppingcart.domain.Models
 
         [Required]
         public Category category { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 }
