@@ -1,4 +1,5 @@
-﻿using ShoppincCart.data.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using ShoppincCart.data.Context;
 using Shoppingcart.domain.Interfaces;
 using Shoppingcart.domain.Models;
 using System;

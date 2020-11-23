@@ -16,6 +16,22 @@ namespace ShoppingCart.application.Services
         {
             _productsRep = productsRepository;
         }
+        public ProductViewModels GetProduct(Guid id)
+        {
+            var myProduct = _productsRep.GetProduct(id);
+            ProductViewModels myModel = new ProductViewModels();
+            myModel.Desc = myProduct.Desc;
+            myModel.ImageUrl = myProduct.ImageUrl;
+            myModel.Name = myProduct.Name;
+            myModel.Price = myProduct.Price;
+            myModel.id = myProduct.id;
+            myModel.category = new CategoryProductModels {
+                id = myProduct.category.id,
+                Name = myProduct.category.Name
+            };
+
+            return myModel;
+        }
         public IQueryable<ProductViewModels> GetProducts()
         {
             //To be implemented unsing autoampper

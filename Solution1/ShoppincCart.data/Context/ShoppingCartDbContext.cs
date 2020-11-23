@@ -19,5 +19,10 @@ namespace ShoppincCart.data.Context
 
             modelBuilder.Entity<Product>().Property(x => x.id).HasDefaultValueSql("NEWID()");
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+        }
     }
 }

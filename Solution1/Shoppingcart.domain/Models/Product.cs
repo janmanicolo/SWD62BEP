@@ -20,8 +20,10 @@ namespace Shoppingcart.domain.Models
         public string Desc { get; set; }
 
         [Required]
-        public Category category { get; set; }
+        public virtual Category category { get; set; }
 
         public string ImageUrl { get; set; }
+
+        public int Stock { get; set; }
     }
 }
