@@ -13,5 +13,7 @@ namespace ShoppingCart.application.Interfaces
         IQueryable<ProductViewModels> GetProducts(int category);
 
         ProductViewModels GetProduct(Guid id);
+
+        void AddProduct(ProductViewModels product);
     }
 }

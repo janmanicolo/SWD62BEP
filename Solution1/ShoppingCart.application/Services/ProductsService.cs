@@ -1,5 +1,6 @@
 ﻿
 using Shoppingcart.domain.Interfaces;
+using Shoppingcart.domain.Models;
 using ShoppingCart.application.Interfaces;
 using ShoppingCart.application.ViewModels;
 using System;
@@ -16,6 +17,22 @@ namespace ShoppingCart.application.Services
         {
             _productsRep = productsRepository;
         }
+
+        public void AddProduct(ProductViewModels product)
+        {
+            Product newProduct = new Product()
+            {
+                Desc = product.Desc,
+                Name = product.Name,
+                Price = product.Price,
+                CategoryID = product.category.id,
+                ImageUrl = product.ImageUrl
+            };
+
+            _productsRep.AddProduct(newProduct);
+
+        }
+
         public ProductViewModels GetProduct(Guid id)
         {
             var myProduct = _productsRep.GetProduct(id);
@@ -25,7 +42,7 @@ namespace ShoppingCart.application.Services
             myModel.Name = myProduct.Name;
             myModel.Price = myProduct.Price;
             myModel.id = myProduct.id;
-            myModel.category = new CategoryProductModels {
+            myModel.category = new CategoryViewModels {
                 id = myProduct.category.id,
                 Name = myProduct.category.Name
             };
@@ -42,7 +59,7 @@ namespace ShoppingCart.application.Services
                            Desc = p.Desc,
                            Name = p.Name,
                            Price = p.Price,
-                           category = new CategoryProductModels() { id = p.category.id, Name = p.category.Name },
+                           category = new CategoryViewModels() { id = p.category.id, Name = p.category.Name },
                            ImageUrl = p.ImageUrl
                        };
             return list;
@@ -58,7 +75,7 @@ namespace ShoppingCart.application.Services
                            Desc = p.Desc,
                            Name = p.Name,
                            Price = p.Price,
-                           category = new CategoryProductModels() { id = p.category.id, Name = p.category.Name },
+                           category = new CategoryViewModels() { id = p.category.id, Name = p.category.Name },
                            ImageUrl = p.ImageUrl
                        };
             return list;

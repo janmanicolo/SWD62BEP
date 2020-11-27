@@ -15,7 +15,7 @@ namespace ShoppingCart.application.ViewModels
         public string Desc { get; set; }
 
         
-        public CategoryProductModels category { get; set; }
+        public CategoryViewModels category { get; set; }
 
         public string ImageUrl { get; set; }
     }

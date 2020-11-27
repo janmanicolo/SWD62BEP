@@ -30,6 +30,11 @@ namespace ShoppincCart.data.Repositories
             _context.SaveChanges();
         }
 
+        public IQueryable<Category> GetCategories()
+        {
+            throw new NotImplementedException();
+        }
+
         public Product GetProduct(Guid id)
         {
             //Single or default will retutnr one product or null

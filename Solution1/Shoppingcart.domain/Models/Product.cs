@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Shoppingcart.domain.Models
@@ -21,6 +22,9 @@ namespace Shoppingcart.domain.Models
 
         [Required]
         public virtual Category category { get; set; }
+
+        [ForeignKey("category")]
+        public int CategoryID { get; set; } //This is the actual foergin key;This is a wa to address the relationship
 
         public string ImageUrl { get; set; }
 

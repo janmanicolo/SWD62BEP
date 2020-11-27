@@ -6,15 +6,8 @@ using System.Text;
 
 namespace Shoppingcart.domain.Interfaces
 {
-    public interface IProductsRepository
+    public interface ICategoryRepository
     {
         IQueryable<Category> GetCategories();
-        IQueryable<Product> GetProducts();
-
-        Product GetProduct(Guid id);
-
-        void DeleteProduct(Product p);
-        Guid AddProduct(Product p);
-
     }
 }
