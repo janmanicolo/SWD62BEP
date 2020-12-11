@@ -15,5 +15,9 @@ namespace ShoppingCart.application.Interfaces
         ProductViewModels GetProduct(Guid id);
 
         void AddProduct(ProductViewModels product);
+
+        void DeleteProduct(Guid id);
+
+        //disable produycts to be impleted
     }
 }

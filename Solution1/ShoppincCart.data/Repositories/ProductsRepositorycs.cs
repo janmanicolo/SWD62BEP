@@ -30,6 +30,13 @@ namespace ShoppincCart.data.Repositories
             _context.SaveChanges();
         }
 
+        public void DisableProducts(Guid id)
+        {
+            var p = GetProduct(id);
+            p.disbale = true;
+            _context.SaveChanges();
+        }
+
         public IQueryable<Category> GetCategories()
         {
             throw new NotImplementedException();

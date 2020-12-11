@@ -23,11 +23,11 @@ namespace PresentationWebApp.Controllers
 
             if (string.IsNullOrEmpty(query))
             {
-                ViewData["warning"] = "Type in some question";
+                TempData["warning"] = "Type in some question";
             }
             else
             {
-                ViewData["feedback"] = "Thank you for getting in touch with us. We will answer back asap";
+                TempData["feedback"] = "Thank you for getting in touch with us. We will answer back asap";
             }
             return View();
         }

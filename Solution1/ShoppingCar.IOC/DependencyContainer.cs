@@ -25,6 +25,10 @@ namespace ShoppingCar.IOC
             services.AddScoped<ICategoryRepository, CategoriesRepository>();
             services.AddScoped<ICategoryService, CategoriesService>();
 
+
+            services.AddScoped<IMembersRepository, MembersRepostory>();
+            services.AddScoped<IMembersService, MembersSerivce>();
+
         }
     }
 }

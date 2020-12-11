@@ -33,6 +33,16 @@ namespace ShoppingCart.application.Services
 
         }
 
+        public void DeleteProduct(Guid id)
+        {
+            var pToDelete = _productsRep.GetProduct(id);
+
+            if(pToDelete != null)
+            {
+                _productsRep.DeleteProduct(pToDelete);
+            }            
+        }
+
         public ProductViewModels GetProduct(Guid id)
         {
             var myProduct = _productsRep.GetProduct(id);
